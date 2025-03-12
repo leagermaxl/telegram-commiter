@@ -8,11 +8,11 @@ app.use(express.json());
 
 app.use(logger);
 
-app.get("/", async (req, res) => {
+app.get("/api", async (req, res) => {
     res.send("Server is ready");
 })
 
-app.post("/", async (req, res) => {
+app.post("/api", async (req, res) => {
     const commit = req.body.head_commit;
     if (!commit) return res.sendStatus(400);
 
